@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Spice Restaurant | Dhanmondi, Dhaka</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4A853;
+            --warm-orange: #E07B39;
+            --deep-brown: #4A2C2A;
+            --cream: #FDF6E3;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-warm {
+            background: linear-gradient(135deg, #4A2C2A 0%, #7B3F3F 100%);
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(74, 44, 42, 0.7), rgba(74, 44, 42, 0.5));
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 168, 83, 0.2);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-[#FDF6E3]">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#4A2C2A]/95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="font-display text-2xl font-bold text-[#D4A853]">
+                    <i class="fas fa-utensils mr-2"></i>Golden Spice
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-[#D4A853] transition">Home</a>
+                    <a href="#about" class="text-white hover:text-[#D4A853] transition">About</a>
+                    <a href="#menu" class="text-white hover:text-[#D4A853] transition">Menu</a>
+                    <a href="#gallery" class="text-white hover:text-[#D4A853] transition">Gallery</a>
+                    <a href="#contact" class="text-white hover:text-[#D4A853] transition">Contact</a>
+                </div>
+                <button id="menuBtn" class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#4A2C2A] pb-4">
+            <a href="#home" class="block px-4 py-2 text-white hover:bg-[#D4A853]/20">Home</a>
+            <a href="#about" class="block px-4 py-2 text-white hover:bg-[#D4A853]/20">About</a>
+            <a href="#menu" class="block px-4 py-2 text-white hover:bg-[#D4A853]/20">Menu</a>
+            <a href="#gallery" class="block px-4 py-2 text-white hover:bg-[#D4A853]/20">Gallery</a>
+            <a href="#contact" class="block px-4 py-2 text-white hover:bg-[#D4A853]/20">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920" alt="Restaurant Interior" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-4">Golden Spice</h1>
+            <p class="text-[#D4A853] text-xl md:text-2xl mb-2">Restaurant & Cuisine</p>
+            <p class="text-white/80 text-lg mb-8"><i class="fas fa-map-marker-alt mr-2"></i>Dhanmondi, Dhaka</p>
+            <p class="text-white/90 text-lg max-w-2xl mx-auto mb-8">Experience the authentic flavors of traditional cuisine with a modern twist</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-[#D4A853] hover:bg-[#E07B39] text-white px-8 py-3 rounded-full font-semibold transition transform hover:scale-105">
+                    View Menu
+                </a>
+                <a href="https://wa.me/8801712345678?text=Hello! I'd like to place an order." target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i>Order Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="About Golden Spice" class="rounded-2xl shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="font-display text-4xl font-bold text-[#4A2C2A] mb-6">Our Story</h2>
+                    <div class="w-20 h-1 bg-[#D4A853] mb-6"></div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Welcome to Golden Spice Restaurant, a culinary gem nestled in the heart of Dhanmondi, Dhaka. Since 2010, we have been serving our guests with the finest traditional and contemporary dishes prepared with love and the freshest ingredients.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Our expert chefs bring decades of experience, combining age-old recipes with modern culinary techniques to create dishes that delight your taste buds and warm your soul.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="p-4 bg-[#FDF6E3] rounded-xl">
+                            <p class="text-3xl font-bold text-[#E07B39]">14+</p>
+                            <p class="text-sm text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="p-4 bg-[#FDF6E3] rounded-xl">
+                            <p class="text-3xl font-bold text-[#E07B39]">50+</p>
+                            <p class="text-sm text-gray-600">Menu Items</p>
+                        </div>
+                        <div class="p-4 bg-[#FDF6E3] rounded-xl">
+                            <p class="text-3xl font-bold text-[#E07B39]">10K+</p>
+                            <p class="text-sm text-gray-600">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-[#FDF6E3]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-[#4A2C2A] mb-4">Our Menu</h2>
+                <div class="w-20 h-1 bg-[#D4A853] mx-auto mb-4"></div>
+                <p class="text-gray-600">Discover our delicious offerings</p>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterMenu('all')" class="menu-filter active px-6 py-2 rounded-full bg-[#4A2C2A] text-white hover:bg-[#D4A853] transition">All</button>
+                <button onclick="filterMenu('appetizer')" class="menu-filter px-6 py-2 rounded-full bg-white text-[#4A2C2A] hover:bg-[#D4A853] hover:text-white transition">Appetizers</button>
+                <button onclick="filterMenu('main')" class="menu-filter px-6 py-2 rounded-full bg-white text-[#4A2C2A] hover:bg-[#D4A853] hover:text-white transition">Main Course</button>
+                <button onclick="filterMenu('biryani')" class="menu-filter px-6 py-2 rounded-full bg-white text-[#4A2C2A] hover:bg-[#D4A853] hover:text-white transition">Biryani</button>
+                <button onclick="filterMenu('dessert')" class="menu-filter px-6 py-2 rounded-full bg-white text-[#4A2C2A] hover:bg-[#D4A853] hover:text-white transition">Desserts</button>
+            </div>
+
+            <!-- Menu Items -->
+            <div id="menuGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Appetizers -->
+                <div class="menu-card menu-item appetizer bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="images/samosa.jpg" alt="Samosa" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Chicken Samosa</h3>
+                            <span class="text-[#E07B39] font-bold">৳120</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Crispy pastry filled with spiced chicken (4 pcs)</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item appetizer bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400" alt="Seekh Kebab" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Seekh Kebab</h3>
+                            <span class="text-[#E07B39] font-bold">৳280</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Juicy minced meat kebabs with special spices (6 pcs)</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item appetizer bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400" alt="Chicken Wings" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Spicy Wings</h3>
+                            <span class="text-[#E07B39] font-bold">৳350</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Golden fried wings with our signature spice rub</p>
+                    </div>
+                </div>
+
+                <!-- Main Course -->
+                <div class="menu-card menu-item main bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400" alt="Butter Chicken" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Butter Chicken</h3>
+                            <span class="text-[#E07B39] font-bold">৳450</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Tender chicken in rich, creamy tomato sauce</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item main bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=400" alt="Mutton Curry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Mutton Rezala</h3>
+                            <span class="text-[#E07B39] font-bold">৳580</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Aromatic mutton curry in white gravy with yogurt</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item main bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" alt="Fish Curry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Hilsa Fish Curry</h3>
+                            <span class="text-[#E07B39] font-bold">৳650</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Traditional Bengali hilsa in mustard sauce</p>
+                    </div>
+                </div>
+
+                <!-- Biryani -->
+                <div class="menu-card menu-item biryani bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" alt="Chicken Biryani" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Chicken Biryani</h3>
+                            <span class="text-[#E07B39] font-bold">৳380</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Fragrant basmati rice with tender chicken pieces</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item biryani bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400" alt="Mutton Biryani" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Mutton Biryani</h3>
+                            <span class="text-[#E07B39] font-bold">৳520</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Royal biryani with succulent mutton and saffron</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item biryani bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400" alt="Kacchi Biryani" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Kacchi Biryani</h3>
+                            <span class="text-[#E07B39] font-bold">৳480</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Traditional Dhaka-style kacchi with aromatic spices</p>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-card menu-item dessert bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Firni" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Firni</h3>
+                            <span class="text-[#E07B39] font-bold">৳120</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Creamy rice pudding with cardamom and pistachios</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item dessert bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400" alt="Gulab Jamun" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Gulab Jamun</h3>
+                            <span class="text-[#E07B39] font-bold">৳150</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Soft milk dumplings in rose-flavored syrup (4 pcs)</p>
+                    </div>
+                </div>
+
+                <div class="menu-card menu-item dessert bg-white rounded-2xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=400" alt="Kulfi" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl font-semibold text-[#4A2C2A]">Mango Kulfi</h3>
+                            <span class="text-[#E07B39] font-bold">৳180</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Traditional frozen dessert with fresh mango</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 gradient-warm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-white mb-4">Gallery</h2>
+                <div class="w-20 h-1 bg-[#D4A853] mx-auto mb-4"></div>
+                <p class="text-white/80">A glimpse of our restaurant and dishes</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400" alt="Restaurant" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" alt="Food" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400" alt="Dish" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400" alt="Food" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400" alt="Interior" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400" alt="Indian Food" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400" alt="Biryani" class="w-full h-48 object-cover transition duration-500">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-xl cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400" alt="Dessert" class="w-full h-48 object-cover transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-[#4A2C2A] mb-4">Visit Us</h2>
+                <div class="w-20 h-1 bg-[#D4A853] mx-auto mb-4"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Opening Hours -->
+                <div class="bg-[#FDF6E3] rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-[#D4A853] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-[#4A2C2A] mb-4">Opening Hours</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p><span class="font-semibold">Saturday - Thursday</span></p>
+                        <p>11:00 AM - 11:00 PM</p>
+                        <p class="mt-4"><span class="font-semibold">Friday</span></p>
+                        <p>1:00 PM - 11:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="bg-[#FDF6E3] rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-[#E07B39] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-[#4A2C2A] mb-4">Contact Us</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <p><i class="fas fa-phone mr-2 text-[#D4A853]"></i>+880 1712-345678</p>
+                        <p><i class="fas fa-phone mr-2 text-[#D4A853]"></i>+880 1987-654321</p>
+                        <p><i class="fas fa-envelope mr-2 text-[#D4A853]"></i>info@goldenspice.com</p>
+                        <a href="https://wa.me/8801712345678" class="inline-block mt-4 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full transition">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="bg-[#FDF6E3] rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-[#4A2C2A] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-[#4A2C2A] mb-4">Location</h3>
+                    <div class="space-y-2 text-gray-600">
+                        <p>House 25, Road 10A</p>
+                        <p>Dhanmondi R/A</p>
+                        <p>Dhaka 1209, Bangladesh</p>
+                        <a href="https://maps.google.com/?q=Dhanmondi,Dhaka" target="_blank" class="inline-block mt-4 bg-[#4A2C2A] hover:bg-[#D4A853] text-white px-6 py-2 rounded-full transition">
+                            <i class="fas fa-directions mr-2"></i>Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="rounded-2xl overflow-hidden shadow-xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14607.290862085602!2d90.37078565!3d23.7460584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1699000000000!5m2!1sen!2sbd" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-warm py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-display text-2xl font-bold text-[#D4A853] mb-4">
+                        <i class="fas fa-utensils mr-2"></i>Golden Spice
+                    </h3>
+                    <p class="text-white/80">Bringing the finest flavors to your table since 2010. Experience authentic cuisine in the heart of Dhaka.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-white/70 hover:text-[#D4A853] transition">Home</a>
+                        <a href="#about" class="block text-white/70 hover:text-[#D4A853] transition">About Us</a>
+                        <a href="#menu" class="block text-white/70 hover:text-[#D4A853] transition">Menu</a>
+                        <a href="#gallery" class="block text-white/70 hover:text-[#D4A853] transition">Gallery</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#D4A853] transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#D4A853] transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#D4A853] transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-white/60">&copy; 2024 Golden Spice Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8801712345678?text=Hello! I'd like to place an order from Golden Spice Restaurant." target="_blank" class="whatsapp-float bg-green-500 hover:bg-green-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Menu Filter
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.menu-filter');
+            
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#4A2C2A]', 'text-white');
+                btn.classList.add('bg-white', 'text-[#4A2C2A]');
+            });
+            
+            event.target.classList.remove('bg-white', 'text-[#4A2C2A]');
+            event.target.classList.add('bg-[#4A2C2A]', 'text-white');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    item.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // Add fadeIn animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
